@@ -46,6 +46,11 @@ body {
   margin: 0;
 }
 
+.input,
+.textarea {
+  outline: transparent;
+}
+
 .section {
   padding: 94px 0;
 }
@@ -128,7 +133,7 @@ body {
   content: '';
 
   position: absolute;
-  bottom: 0;
+  bottom: -2px;
   left: 0;
 
   display: block;
@@ -313,7 +318,7 @@ body {
   left: 0;
   bottom: 0;
 
-  width: 370px;
+  width: 100%;
   height: 70px;
   display: flex;
   justify-content: center;
@@ -322,11 +327,8 @@ body {
 }
 
 .adds .title {
-  font-style: normal;
-  font-weight: 700;
   font-size: 14px;
-  line-height: 16px;
-  text-align: center;
+  line-height: 1.14;
   letter-spacing: 0.03em;
   text-transform: uppercase;
   color: var(--primary-white-color);
@@ -429,31 +431,31 @@ body {
   transition: fill var(--time) var(--timing-function);
 }
 
-.client-icon:hover,
-.client-icon:focus {
+.client-link:hover .client-icon,
+.client-link:focus .client-icon {
   fill: var(--accent-color);
 }
 
-.clients-item {
+.client-link {
   width: 170px;
   height: 92px;
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-right: 30px;
+
   border: 1px solid var(--icon-color);
   border-radius: 4px;
 
   transition: border var(--time) var(--timing-function);
 }
 
-.clients-item:hover,
-.clients-item:focus {
+.client-link:hover,
+.client-link:focus {
   border: 1px solid var(--accent-color);
 }
 
-.clients-item:last-child {
-  margin-right: 0;
+.clients-item:not(:last-child) {
+  margin-right: 30px;
 }
 
 /* Portfolio-nav */
@@ -486,10 +488,8 @@ body {
 }
 
 .overlay-description > p {
-  font-style: normal;
-  font-weight: 400;
   font-size: 18px;
-  line-height: 28px;
+  line-height: 1.5;
   letter-spacing: 0.03em;
   color: var(--primary-white-color);
   padding: 63px 24px;
@@ -505,21 +505,21 @@ body {
   height: 100%;
 
   background-color: rgba(33, 150, 243, 0.9);
-  overflow: hidden;
+
   transform: translateY(100%);
   transition: transform var(--time) var(--timing-function);
 }
 
-.project:hover .overlay-description {
+.project .link:hover .overlay-description {
   transform: translateY(0);
 }
 
 .project .link {
+  display: block;
   transition: box-shadow var(--time) var(--timing-function);
 }
 
 .project .link:hover {
-  display: block;
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
     1px 4px 6px rgba(0, 0, 0, 0.16);
 }
@@ -676,25 +676,30 @@ body {
   border-radius: 4px;
   color: var(--primary-white-color);
   margin-left: 12px;
+  padding: 10px 28px;
 }
 
-.mailing-field {
+.mailing-input {
   width: 358px;
   height: 50px;
+
+  padding-left: 16px;
+  padding-right: 16px;
+
+  outline: transparent;
   border: 1px solid rgba(255, 255, 255, 0.3);
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
   border-radius: 4px;
   background-color: transparent;
 }
 
-.mailing-field::placeholder {
-  font-style: normal;
+.mailing-input::placeholder {
   font-weight: 400;
   font-size: 16px;
-  line-height: 20px;
+  line-height: 1.25;
   letter-spacing: 0.03em;
   color: rgba(255, 255, 255, 0.6);
-  padding: 15px 15px;
+  /* padding: 15px 15px; */
 }
 
 .footer {
@@ -747,10 +752,9 @@ body {
   left: 50%;
 
   transform: translate(-50%, -50%) scale(1);
-
   width: 528px;
-  height: 581px;
-
+  min-height: 581px;
+  padding: 40px 39px 40px 41px;
   background-color: var(--primary-white-color);
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
     0px 2px 1px rgba(0, 0, 0, 0.2);
@@ -780,18 +784,63 @@ body {
   border: 1px solid var(--border-color);
 }
 
-.registration-form {
-  display: block;
-  padding: 32px 31px 48px 49px;
-}
 .form-title {
   display: block;
   margin-bottom: 12px;
-  font-style: normal;
-  font-weight: 700;
   font-size: 20px;
-  line-height: 23px;
+  line-height: 1.15;
   text-align: center;
   letter-spacing: 0.03em;
   color: var(--title-text-color);
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-field {
+  position: relative;
+  display: block;
+}
+
+.form-field:not(:last-child) {
+  margin-bottom: 10px;
+}
+
+.form-label {
+  display: block;
+  margin-bottom: 4px;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1.15;
+  letter-spacing: 0.01em;
+  color: var(--primary-text-color);
+}
+
+.form-input {
+  width: 100%;
+  height: 40px;
+  padding-left: 42px;
+  padding-right: 42px;
+
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  border-radius: 4px;
+}
+
+.form-input:focus {
+  border-color: var(--accent-color);
+}
+
+.form-icon {
+  position: absolute;
+  bottom: 11px;
+  left: 12px;
+}
+
+.form-message {
+  width: 100%;
+  height: 120px;
+
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  border-radius: 4px;
 }
