@@ -1,10 +1,10 @@
 <svg aria-hidden="true" style="position:absolute;width:0;height:0;overflow:hidden" xmlns="http://www.w3.org/2000/svg">
   <defs>
-    <symbol id="icon-icon-check" viewBox="0 0 32 32">
+    <symbol id="icon-checked" viewBox="0 0 32 32">
       <path fill="#2196f3" style="fill:var(--color1, #2196f3)" d="M4 1h24a4 4 0 0 1 4 4v22a4 4 0 0 1-4 4H4a4 4 0 0 1-4-4V5a4 4 0 0 1 4-4z"/>
       <path fill="#fff" style="fill:var(--color2, #fff);stroke:var(--color2, #fff)" stroke="#fff" stroke-width=".4" d="m7.914 16.504-.138-.132-.138.13L5.71 18.33l.152.146 7.13 6.8.138-.132 15.16-14.462-.152-.144-1.902-1.814-.138.132-13.106 12.492-5.078-4.844z"/>
     </symbol>
-    <symbol id="icon-check" viewBox="0 0 32 32">
+    <symbol id="icon-unchecked" viewBox="0 0 32 32">
       <path d="M28.444 4.334v23.332H3.556V4.334h24.888zm0-3.334H3.556C1.6 1 0 2.5 0 4.334v23.332C0 29.5 1.6 31 3.556 31h24.888C30.4 31 32 29.5 32 27.666V4.334C32 2.5 30.4 1 28.444 1z"/>
     </symbol>
     <symbol id="icon-send" viewBox="0 0 32 32">

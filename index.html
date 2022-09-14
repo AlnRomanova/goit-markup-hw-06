@@ -444,16 +444,18 @@
             </li>
           </ul>
         </div>
-        <form class="mailing-form" name="mailing-form">
+        <div class="mailing-group">
           <h2 class="title">Підпишіться на розсилку</h2>
-          <label class="mailing-field">
-            <input class="mailing-input" type="text" name="mailing-form" placeholder="E-mail" />
+          <form class="mailing-form" name="mailing-form">
+            <label>
+              <input class="mailing-input" type="text" name="mailing-form" placeholder="E-mail" />
+            </label>
             <button class="mailing-btn">Підписатися</button>
             <svg class="mailing-icon" width="24" height="24">
               <use href="./images/icons-2.svg#icon-send"></use>
             </svg>
-          </label>
-        </form>
+          </form>
+        </div>
       </div>
     </footer>
 
@@ -502,9 +504,19 @@
           </div>
           <label class="form-agreement" name="user-agreement">
             <input class="form-checkbox" type="checkbox" name="user-agreement" />
-            <svg class="form-agreement-icon">
-              <use href="" width="16" height="15"></use>
-              <use href="" width="16" height="15"></use>
+            <svg class="form-checkbox-icon">
+              <use
+                class="form-icon-checked"
+                href="./images/icons-2.svg#icon-checked"
+                width="16"
+                height="15"
+              ></use>
+              <use
+                class="form-icon-unchecked"
+                href="./images/icons-2.svg#icon-unchecked"
+                width="16"
+                height="15"
+              ></use>
             </svg>
             <span class="form-agreement-text"
               >Погоджуюся з розсилкою та приймаю
