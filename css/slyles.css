@@ -663,8 +663,12 @@ textarea {
 }
 
 .mailing-form {
-  display: block;
-  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.mailing-field {
+  margin-right: 12px;
 }
 
 .mailing-input {
@@ -673,9 +677,7 @@ textarea {
 
   padding-left: 16px;
   padding-right: 16px;
-  margin-right: 12px;
 
-  border: none;
   border: 1px solid rgba(255, 255, 255, 0.3);
   border-radius: 4px;
   background-color: transparent;
@@ -689,15 +691,16 @@ textarea {
 }
 
 .mailing-icon {
-  position: absolute;
-  right: 28px;
-  bottom: 13px;
+  margin-left: 10px;
 }
 
 .mailing-btn {
+  display: inline-flex;
+  align-items: center;
   min-width: 200px;
-  padding: 10px 62px 10px 28px;
+  padding: 10px 28px;
 
+  font-weight: 700;
   font-size: 16px;
   line-height: 1.9;
   letter-spacing: 0.06em;
@@ -792,6 +795,15 @@ textarea {
   border: 1px solid var(--border-color);
 }
 
+.modal.icon {
+  cursor: pointer;
+
+  transition: fill var(--time) var(--timing-function);
+}
+.modal-btn:hover .modal-icon {
+  fill: var(--accent-color);
+}
+
 .form-title {
   display: block;
   margin-bottom: 12px;
@@ -842,7 +854,8 @@ textarea {
   transition: fill var(--time) var(--timing-function);
 }
 
-.form-input:focus {
+.form-input:focus,
+.form-message:focus {
   border: 1px solid var(--accent-color);
 }
 
@@ -868,6 +881,8 @@ textarea {
   border: 1px solid rgba(33, 33, 33, 0.2);
   border-radius: 4px;
   resize: none;
+
+  transition: border var(--time) var(--timing-function);
 }
 
 .form-message::placeholder {
@@ -935,6 +950,7 @@ textarea {
   margin-right: auto;
   padding: 10px 52px;
 
+  font-weight: 700;
   font-size: 16px;
   line-height: 1.9;
   letter-spacing: 0.06em;
